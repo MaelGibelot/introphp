@@ -1,5 +1,22 @@
 <?php
 require_once '../navbar.php';
+?>
+
+<form action="" method="post">
+    <input type="number" name="nb1" placeholder="Saisissez un nombre" required ="required">
+    <input type="number" name="nb2" placeholder="Saisissez un autre nombre" required ="required">
+    <br>
+    <input type="submit" name="add" value="Additionner">
+    <input type="submit" name="sous" value="Soustraire">
+    <input type="submit" name="mult" value="Multiplier">
+    <input type="submit" name="div" value="Diviser">
+    <input type="submit" name="squareRoot" value="Racine carrée">
+    <input type="submit" name="expo" value="Exposant">
+</form>
+
+
+<?php
+
 
 class Calculette{
     public $nb1;
@@ -28,19 +45,47 @@ class CalcAdenced extends Calculette {
 
 
 
-$calc = new Calculette(2,3);
-$calcAdv = new CalcAdenced(2,3);
-echo $calc -> add();
-echo "<br>";
-echo $calc -> sous();
-echo "<br>";
-echo $calc -> mult();
-echo "<br>";
-echo $calc -> div();
-echo "<br>";
-echo $calcAdv -> squareRoot();
-echo "<br>";
-echo $calcAdv -> expo();
+$calc = new Calculette(0,0);
+$calcAdv = new CalcAdenced(0,0);
 
+if(isset($_POST['nb1']) && isset($_POST['nb2'])){
+
+if(isset($_POST['add'])){
+    $calc->nb1 = $_POST['nb1'];
+    $calc->nb2 = $_POST['nb2'];
+    echo $calc->add()."<br>";
+}
+if(isset($_POST['sous'])){
+    $calc->nb1 = $_POST['nb1'];
+    $calc->nb2 = $_POST['nb2'];
+    echo $calc->sous()."<br>";
+}
+if(isset($_POST['mult'])){
+    $calc->nb1 = $_POST['nb1'];
+    $calc->nb2 = $_POST['nb2'];
+    echo $calc -> mult()."<br>";
+}
+if(isset($_POST['div'])){
+    $calc->nb1 = $_POST['nb1'];
+    $calc->nb2 = $_POST['nb2'];
+    echo $calc -> div()."<br>";
+}
+}
+if(isset($_POST['nb1'])){
+if(isset($_POST['squareRoot'])){
+    $calcAdv->nb1 = $_POST['nb1'];
+    $calcAdv->nb2 = $_POST['nb2'];
+    echo $calcAdv -> squareRoot()."<br>";
+}
+if(isset($_POST['expo'])){
+    $calcAdv->nb1 = $_POST['nb1'];
+    $calcAdv->nb2 = $_POST['nb2'];
+    echo $calcAdv -> expo()."<br>";
+}
+
+}
 
 ?>
+
+
+
