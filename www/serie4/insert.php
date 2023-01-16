@@ -5,19 +5,19 @@ require_once 'settings.php';
 ?>
 <form method="post">
     <label for="prenom">Prenom :</label>
-    <input type="text" id="prenom" name="prenom" typeof="require">
+    <input type="text" id="prenom" name="prenom" required="required">
     <br>
     <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="nom">
+    <input type="text" id="nom" name="nom" required="required">
     <br>
     <label for="email">Email :</label>
-    <input type="email" id="email" name="email">
+    <input type="email" id="email" name="email" required="required">
     <br>
     <label for="contact">Portable :</label>
-    <input type="text" id="contact" name="contact">
+    <input type="text" id="contact" name="contact" required="required">
     <br>
     <label for="adresse">Adresse :</label>
-    <input type="text" id="adresse" name="adresse">
+    <input type="text" id="adresse" name="adresse" required="required">
     <br>
     <input type="submit" value="Envoyer">
 </form>

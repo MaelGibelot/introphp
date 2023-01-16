@@ -30,41 +30,27 @@ if (isset($_POST['submit'])) {
     // Exécution de la requête
     $stmt->execute();
 
+    // Redirection vers la page de listing des utilisateurs
     header('Location: index.php');
     exit;
 }
-
-// Préparation de la requête de sélection
-$query = 'SELECT * FROM users WHERE id = :id';
-$stmt = $pdo->prepare($query);
-
-// Binding de l'ID
-$stmt->bindValue(':id', $id);
-
-// Exécution de la requête
-$stmt->execute();
-
-// Récupération des données de l'utilisateur
-$user = $stmt->fetch();
-
-// Affichage du formulaire pré-rempli
 ?>
-
 <form method="post">
     <label for="prenom">Prenom :</label>
-    <input type="text" id="prenom" name="prenom" value="<?php echo $user['prenom']; ?>">
+    <input type="text" id="prenom" name="prenom" required="required">
     <br>
     <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="nom" value="<?php echo $user['nom']; ?>">
+    <input type="text" id="nom" name="nom" required="required">
     <br>
     <label for="email">Email :</label>
-    <input type="email" id="email" name="email" value="<?php echo $user['email']; ?>">
+    <input type="email" id="email" name="email" required="required">
     <br>
     <label for="contact">Portable :</label>
-    <input type="text" id="contact" name="contact" value="<?php echo $user['contact']; ?>">
+    <input type="text" id="contact" name="contact" required="required">
     <br>
     <label for="adresse">Adresse :</label>
-    <input type="text" id="adresse" name="adresse" value="<?php echo $user['adresse']; ?>">
+    <input type="text" id="adresse" name="adresse" required="required">
     <br>
-    <input type="submit" name="submit" value="Enregistrer">
+    <input type="submit" name="submit" value="Mettre à jour" required="required">
 </form>
+</html>

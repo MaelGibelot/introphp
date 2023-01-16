@@ -1,7 +1,4 @@
 <html>
-<head>
-    <script src="https://kit.fontawesome.com/30505619c2.js" crossorigin="anonymous"></script>
-</head>
 <?php
 require_once '../navbar.php'; ?>
 <body>
@@ -38,8 +35,8 @@ foreach ($rows as $row) {
     echo '<td>' . $row['Contact'] . '</td>';
     echo '<td>' . $row['Adresse'] . '</td>';
     echo '<td>' . $row['InscriptionDate'] . '</td>';
-    echo '<td><a href="update.php?id=' . $row['id'] . '"><img src="pencil.png" style="display : flex; margin-inline: auto"></a></td>';
-    echo '<td><a href="delete.php?id=' . $row['id'] . '">Supprimer</a></td>';
+    echo '<td><a href="update.php?id=' . $row['id'] . '"><img class="pencil" src="pencil.png"></a></td>';
+    echo '<td><a href="delete.php?id=' . $row['id'] . '"><img class="poubelle" src="effacer.png"></a></td>';
     echo '</tr>';
 }
 echo '</table>';
