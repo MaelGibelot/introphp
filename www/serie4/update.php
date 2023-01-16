@@ -46,11 +46,11 @@ if (isset($_POST['submit'])) {
     <input type="email" id="email" name="email" required="required">
     <br>
     <label for="contact">Portable :</label>
-    <input type="text" id="contact" name="contact" required="required">
+    <input type="number" id="contact" name="contact" required="required">
     <br>
     <label for="adresse">Adresse :</label>
     <input type="text" id="adresse" name="adresse" required="required">
     <br>
-    <input type="submit" name="submit" value="Mettre à jour" required="required">
+    <input type="submit" name="submit" value="Mettre à jour">
 </form>
 </html>
