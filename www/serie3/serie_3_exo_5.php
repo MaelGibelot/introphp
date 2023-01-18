@@ -1,10 +1,14 @@
-<html>
+
 <?php
 
 require_once '../navbar.php';
 
 session_start();
-
+if(isset($_POST['dc'])){
+    $Utilisateur = 'null'; $password = 'null';
+    unset($hideLogin);
+    session_destroy();
+}
 if (isset($_POST['Utilisateur']) && isset($_POST['password'])) {
     $Utilisateur = $_POST['Utilisateur'];
     $password = $_POST['password'];
@@ -13,19 +17,23 @@ if (isset($_POST['Utilisateur']) && isset($_POST['password'])) {
     if ($Utilisateur == 'user' && $password == 'password') {
         $_SESSION['logged_in'] = true;
         date_default_timezone_set('Europe/Paris');
-        $_SESSION['login_time'] = time();
+        if(!isset($_SESSION['login_time'])){
+            $_SESSION['login_time'] = time();
+        }
         $hideLogin = true;
-        session_destroy();
-
+        
+        
     } else {
         $error_message = 'Utilisateur ou mot de passe incorrect.';
     }
 }
 
-if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
-    $login_time = date('Y-m-d H:i:s', $_SESSION['login_time']);
-    echo "Bienvenue! Vous vous êtes connecté le $login_time <br>";
-    echo '<a href="">Se déconnecter</a>';
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true && isset($hideLogin)) {
+   
+    $login_time = date('H:i:s', $_SESSION['login_time']);
+    $login_Year = date('d-m-Y', $_SESSION['login_time']);
+    echo "Bienvenue $Utilisateur !  Vous êtes connecté depuis $login_Year, il est $login_time <br>";
+   
 }
 ?>
 
@@ -42,6 +50,13 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
         <input type="password" id="password" name="password">
         <br>
         <input type="submit" value="Se connecter">
+        <?php } ?>
+        </form>
+        <form action="" method="post">
+<?php if (isset($hideLogin)) { ?>
+        <input type="submit" name ="dc" value="Se déconnecter">
+    <?php }
+        ?>
     </form>
-<?php } ?>
-</html>
+
+
