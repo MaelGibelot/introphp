@@ -2,9 +2,15 @@
 <?php
 require_once '../navbar.php'; ?>
 <body>
-<form action="insert.php">
+<div class="choix">
+    <a href="insert.php"><img class="plus" src="plus.png"></a>
+    <a href="search.php"><img class="loupe" src="loupe.png"></a>
+</div>
+<!--<form action="insert.php">
     <input type="submit" value="Ajouter un utilisateur">
-</form>
+    <a href="search.php"><img class="loupe" src="loupe.png"></a>
+    <input type="submit"  value="Rechercher un utilisateur">
+</form> -->
 <?php
 require_once 'settings.php';
 
@@ -35,7 +41,7 @@ foreach ($rows as $row) {
     echo '<td>' . $row['Contact'] . '</td>';
     echo '<td>' . $row['Adresse'] . '</td>';
     echo '<td>' . $row['InscriptionDate'] . '</td>';
-    echo '<td><a href="update.php?id=' . $row['id'] . '"><img class="pencil" src="pencil.png"></a></td>';
+    echo '<td><a href="update.php?id=' . $row['id'] . '"><img class="crayon" src="pencil.png"></a></td>';
     echo '<td><a href="delete.php?id=' . $row['id'] . '"><img class="poubelle" src="effacer.png"></a></td>';
     echo '</tr>';
 }

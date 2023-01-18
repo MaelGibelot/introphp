@@ -9,33 +9,33 @@
 <body>
 <ul class="navbar">
     <li>
-        <a href="../accueil.php">Accueil</a>
+        <a href="../accueil">Accueil</a>
     </li>
     <li class="dropdown">
-        <a href="#" class="dropbtn">Série 1</a>
+        <a class="dropbtn">Série 1</a>
         <div class="dropdown-content">
-            <a href="../serie1/10premier.php">Exercice 1</a>
-            <a href="../serie1/bissextile.php">Exercice 2</a>
-            <a href="../serie1/livres.php">Exercice 3</a>
-            <a href="../serie1/demineur.php">Exercice 4</a>
+            <a href="../serie1/serie_1_exo_1.php">10 Premiers</a>
+            <a href="../serie1/serie_1_exo_2.php">Années bissextile</a>
+            <a href="../serie1/serie_1_exo_3.php">Livres & auteurs</a>
+            <a href="../serie1/serie_1_exo_4.php">Démineur</a>
         </div>
     </li>
     <li class="dropdown">
-        <a href="#" class="dropbtn">Série 2</a>
+        <a class="dropbtn">Série 2</a>
         <div class="dropdown-content">
-            <a href="../serie2/tableauassociatif.php">Exercice 1</a>
-            <a href="../serie2/recursive.php">Exercice 2</a>
-            <a href="../serie2/calculette.php">Exercice 3</a>
+            <a href="../serie2/serie_2_exo_1.php">Tableau associatif</a>
+            <a href="../serie2/serie_2_exo_2.php">Nombres factoriels</a>
+            <a href="../serie2/serie_2_exo_3.php">Calculatrice</a>
         </div>
     </li>
     <li class="dropdown">
-        <a href="#" class="dropbtn">Série 3</a>
+        <a class="dropbtn">Série 3</a>
         <div class="dropdown-content">
-            <a href="../serie3/plusoumoins.php">Exercice 1</a>
-            <a href="../serie3/redirection.php">Exercice 2</a>
-            <a href="../serie3/factures.php">Exercice 3</a>
-            <a href="../serie3/cookie1.php">Exercice 4</a>
-            <a href="../serie3/cookie2.php">Exercice 5</a>
+            <a href="../serie3/serie_3_exo_1.php">Nombre mystère</a>
+            <a href="../serie3/serie_3_exo_2.php">Amazon</a>
+            <a href="../serie3/serie_3_exo_3.php">Générateur de factures</a>
+            <a href="../serie3/serie_3_exo_4.php">Cookie & texte</a>
+            <a href="../serie3/serie_3_exo_5.php">Cookie & connexion</a>
         </div>
     </li>
     <li>
