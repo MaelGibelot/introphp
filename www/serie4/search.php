@@ -1,4 +1,5 @@
 <html>
+<body>
 <?php
 require_once '../navbar.php'; ?>
 
@@ -17,8 +18,8 @@ error_reporting(0);
 // Préparation de la requête de recherche
 $query = "SELECT id, nom, prenom, email, contact, adresse, inscriptionDate FROM users WHERE nom LIKE :nom OR email LIKE :mail";
 $stmt = $pdo->prepare($query);
-    $stmt->bindValue(':nom', "%" . $_POST['nom'] . "%", PDO::PARAM_STR);
-    $stmt->bindValue(':mail', "%" . $_POST['mail'] . "%", PDO::PARAM_STR);
+$stmt->bindValue(':nom', "%" . $_POST['nom'] . "%", PDO::PARAM_STR);
+$stmt->bindValue(':mail', "%" . $_POST['mail'] . "%", PDO::PARAM_STR);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -45,4 +46,6 @@ foreach ($results as $result) {
     echo '<td>' . $result['inscriptionDate'] . '</td>';
     echo '</tr>';
 }
-echo '</table>';
+echo '</table>'; ?>
+</body>
+</html>

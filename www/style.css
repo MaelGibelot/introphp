@@ -62,3 +62,77 @@
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #dddddd;
+    font-weight: bold;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.username, .password {
+    display: flex;
+    justify-content: center;
+}
+
+.txtusername, .txtpassword {
+    width: 100%;
+    padding: 8px 8px;
+    margin-bottom: 7%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.btnconnexion {
+    background-color: #53af57;
+    position: absolute;
+    left: 37.5%;
+    top : 41%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+
+.btndeconnexion {
+    background-color: #c93131;
+    position: relative;
+    left: 37.5%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+
+.txtpassword {
+    margin-bottom: 13%;
+}

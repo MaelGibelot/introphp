@@ -1,6 +1,6 @@
-<?php    require_once '../navbar.php';?>
-<HTML>
+<html>
 <body>
+<?php require_once '../navbar.php'; ?>
 <h1>Une fonction pour afficher un tableau associatif</h1>
 <form>
     <?php
@@ -23,4 +23,4 @@
     ?>
 </form>
 </body>
-</HTML>
+</html>

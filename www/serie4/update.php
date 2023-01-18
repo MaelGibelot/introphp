@@ -1,4 +1,5 @@
 <html>
+<body>
 <?php require_once '../navbar.php' ?>
 <?php
 require_once 'settings.php';
@@ -53,4 +54,5 @@ if (isset($_POST['submit'])) {
     <br>
     <input type="submit" name="submit" value="Mettre à jour">
 </form>
+</body>
 </html>

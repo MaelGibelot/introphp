@@ -1,4 +1,5 @@
 <html>
+<body>
 <?php
 
 require_once '../navbar.php';
@@ -64,4 +65,5 @@ else{
 }
 
 ?>
+</body>
 </html>

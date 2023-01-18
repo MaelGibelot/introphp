@@ -1,16 +1,18 @@
+<html>
+<body>
 <?php require_once '../navbar.php' ?>
 
-    <form method="post"> Générateur de factures :
-        <p>Numéro client : <input type="text" name="numcl"/></p>
-        <p>Code service (r ou p) : <input type="text" name="codeserv"/></p>
-        <p>L'appel a été passé entre : </p>
-        <select name="tranche">
-            <option value="1">6h00 et 18h00</option>
-            <option value="2">18h00 et 6h00</option>
-        </select>
-        <p>Durée totale (en minutes) : <input type="number" name="duree"/></p>
-        <button type="submit">Calculer</button>
-    </form>
+<form method="post"> Générateur de factures :
+    <p>Numéro client : <input type="text" name="numcl"/></p>
+    <p>Code service (r ou p) : <input type="text" name="codeserv"/></p>
+    <p>L'appel a été passé entre : </p>
+    <select name="tranche">
+        <option value="1">6h00 et 18h00</option>
+        <option value="2">18h00 et 6h00</option>
+    </select>
+    <p>Durée totale (en minutes) : <input type="number" name="duree"/></p>
+    <button type="submit">Calculer</button>
+</form>
 
 <?php
 $somme = 0;
@@ -18,7 +20,7 @@ $cpt = 0;
 $service = "En attente";
 
 
-if ( isset($_POST['tranche']) && isset($_POST['codeserv']) && $_POST['tranche'] == 1 && ($_POST['codeserv'] == 'p' || $_POST['codeserv'] == 'P')) {
+if (isset($_POST['tranche']) && isset($_POST['codeserv']) && $_POST['tranche'] == 1 && ($_POST['codeserv'] == 'p' || $_POST['codeserv'] == 'P')) {
     //echo "L'utilisateur a téléphoné en journée et possède le service premium";
     if ($_POST['duree'] > 75) {
         $cpt = $_POST['duree'] - 75;
@@ -28,7 +30,7 @@ if ( isset($_POST['tranche']) && isset($_POST['codeserv']) && $_POST['tranche'] 
     }
 }
 
-if (isset($_POST['codeserv'])){
+if (isset($_POST['codeserv'])) {
 
     if (isset($_POST['duree']) && $_POST['codeserv'] == 'r' || $_POST['codeserv'] == 'R') {
         //echo "L'utilisateur a téléphoné en journée et possède le service classique";
@@ -66,3 +68,5 @@ if (!empty($_POST)) {
     }
 }
 ?>
+</body>
+</html>

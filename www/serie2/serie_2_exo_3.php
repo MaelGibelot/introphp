@@ -1,18 +1,20 @@
+<html>
+<body>
 <?php
 require_once '../navbar.php';
 ?>
 
-    <form action="" method="post">
-        <input type="number" name="nb1" placeholder="Saisissez un nombre" required="required">
-        <input type="number" name="nb2" placeholder="Saisissez un autre nombre" required="required">
-        <br>
-        <input type="submit" name="add" value="Additionner">
-        <input type="submit" name="sous" value="Soustraire">
-        <input type="submit" name="mult" value="Multiplier">
-        <input type="submit" name="div" value="Diviser">
-        <input type="submit" name="squareRoot" value="Racine carrée">
-        <input type="submit" name="expo" value="Exposant">
-    </form>
+<form action="" method="post">
+    <input type="number" name="nb1" placeholder="Saisissez un nombre" required="required">
+    <input type="number" name="nb2" placeholder="Saisissez un autre nombre" required="required">
+    <br>
+    <input type="submit" name="add" value="Additionner">
+    <input type="submit" name="sous" value="Soustraire">
+    <input type="submit" name="mult" value="Multiplier">
+    <input type="submit" name="div" value="Diviser">
+    <input type="submit" name="squareRoot" value="Racine carrée">
+    <input type="submit" name="expo" value="Exposant">
+</form>
 
 
 <?php
@@ -107,3 +109,5 @@ if (isset($_POST['nb1'])) {
     }
 }
 ?>
+</body>
+</html>

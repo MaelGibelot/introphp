@@ -72,6 +72,10 @@ form input[type="submit"]:hover {
 
 .poubelle {
     border: 2px solid black;
+    background-color: lightcoral;
+}
+
+.poubelle:hover {
     background-color: red;
 }
 

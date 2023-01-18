@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php require_once '../navbar.php'; ?>
 
 <h1>Guess the number</h1>
@@ -45,3 +47,5 @@ if ($_SESSION['counter'] > 5) {
     <input type="number" id="guess" name="guess">
     <input type="submit" value="Guess">
 </form>
+</body>
+</html>

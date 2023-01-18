@@ -1,4 +1,5 @@
 <html>
+<body>
 <?php
 require_once '../navbar.php';
 require_once 'settings.php';
@@ -32,17 +33,18 @@ $adresse = $_POST['adresse'];
 
 // Préparation de la requête d'insertion
 
-    $query = 'INSERT INTO users (prenom, nom, email, contact, adresse) VALUES (:prenom, :nom, :email, :contact, :adresse)';
-    $statement = $pdo->prepare($query);
+$query = 'INSERT INTO users (prenom, nom, email, contact, adresse) VALUES (:prenom, :nom, :email, :contact, :adresse)';
+$statement = $pdo->prepare($query);
 // Binding des valeurs
-    $statement->bindValue(':prenom', $prenom);
-    $statement->bindValue(':nom', $nom);
-    $statement->bindValue(':email', $email);
-    $statement->bindValue(':contact', $contact);
-    $statement->bindValue(':adresse', $adresse);
-    $statement->execute();
+$statement->bindValue(':prenom', $prenom);
+$statement->bindValue(':nom', $nom);
+$statement->bindValue(':email', $email);
+$statement->bindValue(':contact', $contact);
+$statement->bindValue(':adresse', $adresse);
+$statement->execute();
 
 header('Location: ../index.php');
 exit;
 ?>
+</body>
 </html>

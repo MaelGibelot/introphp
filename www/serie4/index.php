@@ -1,7 +1,8 @@
 <html>
+<body>
 <?php
 require_once '../navbar.php'; ?>
-<body>
+
 <div class="choix">
     <a href="insert.php"><img class="plus" src="assets/plus.png"></a>
     <a href="search.php"><img class="loupe" src="assets/loupe.png"></a>
