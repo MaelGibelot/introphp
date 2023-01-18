@@ -11,23 +11,22 @@ if (!isset($_SESSION["rand"])) {
     $_SESSION['counter'] = 0;
 }
 
-?>
-<?php
-
-    $_SESSION['counter'] += 1;
+$_SESSION['counter'] += 1;
 
 $secretNumber = $_SESSION['rand'];
 $cpt = $_SESSION['counter'];
-$saisi = $_POST['guess'];
+if (isset($_POST['guess'])) {
+    $saisi = $_POST['guess'];
+}
 if ($cpt > 1 && $cpt < 6) {
-    if ($secretNumber < $saisi) {
+    if (isset($_POST['guess']) && $secretNumber < $saisi) {
         echo "moins !! <br>";
     }
-    if ($secretNumber > $saisi) {
+    if (isset($_POST['guess']) && $secretNumber > $saisi) {
         echo "plus !! <br>";
     }
 }
-if ($_SESSION["rand"] == $_POST['guess']) {
+if (isset($_POST['guess']) && $_SESSION["rand"] == $_POST['guess']) {
     echo "Vous avez gagné, le nombre était $secretNumber";
 
     $_SESSION['counter'] = 0;
@@ -38,6 +37,7 @@ if ($_SESSION['counter'] > 5) {
     $_SESSION['counter'] = 0;
     $_SESSION["rand"] = rand(1, 100);
 }
+
 ?>
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
